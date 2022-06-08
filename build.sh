@@ -1,5 +1,5 @@
-#!/bin/sh -e
-cd "$(dirname "$0")"
+#!/usr/bin/env sh
+cd "$(dirname "$0")" || return
 
 rm -f ./fixuid
-CGO_ENABLED=0 go build
+GOOS=linux CGO_ENABLED=0 go build

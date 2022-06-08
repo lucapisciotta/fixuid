@@ -1,12 +1,12 @@
-#!/bin/sh
-cd $(dirname $0)
+#!/usr/bin/env sh
+cd "$(dirname "$0")" || return
 
 display_usage() {
-    echo "Usage:\n$0 [version]"
+    printf "Usage:\n%s [version]" "$0"
 }
 
 # check whether user had supplied -h or --help . If yes display usage
-if [ $1 = "--help" ] || [ $1 = "-h" ]
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]
 then
     display_usage
     exit 0
@@ -20,5 +20,5 @@ then
 fi
 
 sudo rm -f /usr/local/bin/fixuid
-sudo tar -C /usr/local/bin -xvzf fixuid-$1-linux-amd64.tar.gz
+sudo tar -C /usr/local/bin -xvzf "fixuid-$1-linux-amd64.tar.gz"
 ls -lh /usr/local/bin/fixuid
