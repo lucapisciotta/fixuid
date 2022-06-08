@@ -1,4 +1,4 @@
-module github.com/lucapisciotta/fixuid
+module github.com/boxboat/fixuid
 
 go 1.18
 
