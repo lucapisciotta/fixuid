@@ -2,7 +2,7 @@ before:
   hooks:
     - go mod download
 builds:
-    env:
+  - env:
       - CGO_ENABLED=0
     goarch:
       - amd64
